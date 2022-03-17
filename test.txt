@@ -1,2 +1,3 @@
 echo "test file printed"
 echo "hello"
+echo "321"
