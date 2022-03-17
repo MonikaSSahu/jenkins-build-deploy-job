@@ -5,8 +5,7 @@ pipeline{
       steps{
         echo "test the code..."
             echo "hello 123"
-            echo "world"
-            sh "echo 'helloooooooooooo' >> test.txt"
+            echo "world mkmkkoijoi"
       }
       }
   }
