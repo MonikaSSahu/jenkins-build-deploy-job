@@ -21,7 +21,7 @@ pipeline{
                   // As per security concerns not mentioning gcloud actual credentials
                  //After deployment I removed the webhook
                 //sh "gcloud container clusters get-credentials k8-cluster --zone asia-south1-a --project project-name"
-              sh "sed -i 's/tagVersion/${params.DOCKER_TAG}/g' httpbin-deployment.yaml"
+             	  sh "sed -i 's/tagVersion/${params.DOCKER_TAG}/g' httpbin-deployment.yaml"
 		  sh "sed -i 's/dockerId/${params.DOCKER_ID}/g' httpbin-deployment.yaml"
 		  sh "sed -i 's/dockerRepo/${params.DOCKER_REPO}/g' httpbin-deployment.yaml"
 		  
