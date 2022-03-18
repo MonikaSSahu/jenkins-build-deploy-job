@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: web_name-admin
+  name: web_name
   labels:
-    app: web_name-admin
+    app: web_name
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: web_name-admin
+      app: web_name
   template:
     metadata:
       labels:
-        app: web_name-admin
+        app: web_name
     spec:
       containers:
-      - name: web_name-admin
+      - name: web_name
         image: dockerId/dockerRepo:tagVersion
         ports:
         - containerPort: 8080
