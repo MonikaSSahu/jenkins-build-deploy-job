@@ -3,7 +3,7 @@ pipeline{
       parameters{
       string(name: 'DOCKER_ID', defaultValue: 'monika22')
     	string(name: 'DOCKER_REPO', defaultValue: 'test-assessment')
-    	string(name: 'DOCKER_TAG', defaultValue: 'test-py-assessment-01')
+    	string(name: 'DOCKER_TAG', defaultValue: 'test-py-assessment-001')
       }
   stages{
     stage("SCM checkout"){
