@@ -3,12 +3,12 @@ kind: Service
 metadata:
   name: web_name-service
   annotations:
-    cloud.google.com/app-protocols: '{"service-https": "HTTPS"}'
+    cloud.google.com/app-protocols: '{"service-http": "HTTP"}'
 spec:
   selector:
     app: web_name
   ports:
-  - name: service-https
+  - name: service-http
     port: 4200
     targetPort: 8080
   type: NodePort
