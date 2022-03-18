@@ -3,7 +3,7 @@ pipeline{
       parameters{
       string(name: 'DOCKER_ID', defaultValue: 'monika22')
     	string(name: 'DOCKER_REPO', defaultValue: 'test-assessment')
-    	string(name: 'DOCKER_TAG', defaultValue: 'test-py-assessment-001')
+    	string(name: 'DOCKER_TAG', defaultValue: 'test-py-assessment-lementi')
       }
   stages{
     stage("SCM checkout"){
@@ -14,6 +14,7 @@ pipeline{
       }
         stage('Build Docker image'){
               steps{
+                    echo "build...image"
                     sh "docker build -t ${params.DOCKER_ID}/${params.DOCKER_REPO}:${params.DOCKER_TAG} ."
               }
         }
