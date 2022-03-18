@@ -17,5 +17,10 @@ pipeline{
                     sh "docker build -t ${params.DOCKER_ID}/${params.DOCKER_REPO}:${params.DOCKER_TAG} ."
               }
         }
+         stage('Build Docker image'){
+              steps{
+                    sh "docker push ${params.DOCKER_ID}/${params.DOCKER_REPO}:${params.DOCKER_TAG}"
+              }
+        }
   }
  }
