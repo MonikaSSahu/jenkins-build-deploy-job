@@ -17,8 +17,9 @@ pipeline{
                     sh "docker build -t ${params.DOCKER_ID}/${params.DOCKER_REPO}:${params.DOCKER_TAG} ."
               }
         }
-         stage('Pull the image to dockerhub'){
+         stage('Push Docker image'){
               steps{
+                    echo "Push the image to...Dockerhub "
                     sh "docker push ${params.DOCKER_ID}/${params.DOCKER_REPO}:${params.DOCKER_TAG}"
               }
         }
