@@ -20,9 +20,12 @@ pipeline{
         }
          stage('Push Docker image'){
               steps{
-                    echo "Push the image to...Dockerhub "
-                    sh "docker push ${params.DOCKER_ID}/${params.DOCKER_REPO}:${params.DOCKER_TAG}"
-              }
+                    withDockerRegistry(credentialsId: 'dockerhub', url: 'https://hub.docker.com/') {
+                                    echo "Push the image to...Dockerhub "
+                                    sh "docker push ${params.DOCKER_ID}/${params.DOCKER_REPO}:${params.DOCKER_TAG}"
+
+                        }
+                    }
         }
   }
  }
