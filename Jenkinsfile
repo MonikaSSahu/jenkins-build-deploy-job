@@ -3,7 +3,7 @@ pipeline{
       parameters{
       string(name: 'DOCKER_ID', defaultValue: 'monika22')
     	string(name: 'DOCKER_REPO', defaultValue: 'test-assessment')
-    	string(name: 'DOCKER_TAG', defaultValue: 'test-py-assessment-lementi')
+    	string(name: 'DOCKER_TAG', defaultValue: 'test-py-assessment-lementi-1')
       }
   stages{
     stage("SCM checkout"){
@@ -20,7 +20,7 @@ pipeline{
         }
          stage('Push Docker image'){
               steps{
-                    withDockerRegistry(credentialsId: 'dockerhub') {
+                    withDockerRegistry(credentialsId: 'dockerhub', url: '') {
                                     echo "Push the image to...Dockerhub "
                                     sh "docker push ${params.DOCKER_ID}/${params.DOCKER_REPO}:${params.DOCKER_TAG}"
 
