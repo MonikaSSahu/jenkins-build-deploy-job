@@ -25,10 +25,10 @@ pipeline{
 		  sh "sed -i 's/dockerId/${params.DOCKER_ID}/g' httpbin-deployment.yaml"
 		  sh "sed -i 's/dockerRepo/${params.DOCKER_REPO}/g' httpbin-deployment.yaml"
 		  
-		  sh "sed -i 's/store_name/${params.web_name}/g' httpbin-deployment.yaml"
+		  sh "sed -i 's/web_name/${params.web_name}/g' httpbin-deployment.yaml"
 		  
-		  sh "sed -i 's/store_name/${params.web_name}/g' httpbin-service.yaml"
-		  sh "sed -i 's/store_name/${params.web_name}/g' httpbin-service.yaml"   
+		  sh "sed -i 's/web_name/${params.web_name}/g' httpbin-service.yaml"
+		  sh "sed -i 's/web_name/${params.web_name}/g' httpbin-service.yaml"   
                     
                script{
               try{
