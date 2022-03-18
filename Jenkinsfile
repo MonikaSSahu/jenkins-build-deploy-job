@@ -14,7 +14,7 @@ pipeline{
       }
         stage('Build Docker image'){
               steps{
-                    echo "build...image"
+                    echo "build..image"
                     sh "docker build -t ${params.DOCKER_ID}/${params.DOCKER_REPO}:${params.DOCKER_TAG} ."
               }
         }
